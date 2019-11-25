@@ -1,2 +1,8 @@
 # ChutesAndLadders
 analysis of average turns to finish from every square on the board
+
+Most of my GitHub is about computer strategies to win common recreational board and card games. Chutes and Ladders is an easy starting point, because there is no strategy. However, you can still use algorithms (in this case, a script to perform a large but straightforward linear algebra calculation) to predict outcomes. Predicting outcomes with expected values will come in useful in more strategic games. The program works out the Expected Value of turns remaining to get to 100, based on current position.
+
+Expected Value is the average number of turns you could expect to win. For example, if you have a 1/2 chance of finishing in 3 turns and a 1/2 chance of finishing in 5 turns, the EV = 1/2 * 3 + 1/2 * 5 = 4. Chutes and Ladders could theoretically take an infinite number of turns, by looping around the same chute-ladder combination an infinite number of times, so you might expect an infinite EV. However, the chance of an infinite loop is infinitesimal, and it turns out infinite and infinitesimal cancel out to something reassuringly finite, at least in this situation. The EV never exceeds 50 for any square, which is fortunate given the attention spans of most C&L players.
+
+EV is not directly related to win probability in a general sense. For example, Jill could be 99% certain to finish in 2 turns, with a 1% probably of finishing in 1000 turns. Alex could be certain to finish in 10 turns, no matter what. In this case Alex would have the lower EV (10 vs. 11.98), but would still lose 99% of the time.
